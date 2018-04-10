@@ -4,6 +4,10 @@ import './App.css';
 import Kitchen from './Kitchen'
 
 class App extends Component {
+  state= { 
+    kitchenName: "Spencer's Kitchen",
+    kitchenPowerIsOn: false
+  }
   constructor(){
     super()
     console.log('App.constructor()')
@@ -16,8 +20,8 @@ class App extends Component {
     console.log('App.render()')  
     return (
       <div className="App">
-      Kitchen is here and ready to go
-          <Kitchen />
+      
+          <Kitchen name={this.state.kitchenName} powerIsOn={this.state.kitchenPowerIsOn}/>
       </div>
     );
   }

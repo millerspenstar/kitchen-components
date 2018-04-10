@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import Microwave from './Microwave.js'
 import Stove from './Stove.js'
 class Kitchen extends Component {
-    constructor() {
-        super()
-        console.log('Kitchen.constructor()')
+    constructor(props) {
+        super(props)
+        console.log('Kitchen.constructor()', props)
     }
 
     componentWillMount() {
@@ -15,9 +15,11 @@ class Kitchen extends Component {
         console.log('Kitchen.render()')
         return (
             <div>
-                Kitchen is here and ready to go
-                <Microwave />
-                <Stove />
+                <header>
+                    <h1>{this.props.name}</h1>
+                </header>
+                <Microwave powerIsOn={this.props.powerIsOn} />
+                <Stove powerIsOn={this.props.powerIsOn}/>
             </div>)
 
     }

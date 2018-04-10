@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
 class Stove extends Component {
-    constructor(){
-    super()
-    console.log('Stove.constructor()')
+    constructor(props){
+    super(props)
+    console.log('Stove.constructor()', props)
   }
   componentWillMount(){
     console.log('Stove.componentWillMount()')
